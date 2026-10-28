@@ -1,5 +1,8 @@
 # LEA Audio Toolkit
 
+[![build-and-release](https://github.com/sol-long/lea-audio-toolkit/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/sol-long/lea-audio-toolkit/actions/workflows/build-and-release.yml)
+[![release](https://img.shields.io/github/v/release/sol-long/lea-audio-toolkit)](https://github.com/sol-long/lea-audio-toolkit/releases)
+
 让 **第三方 LE Audio 耳机**（不走 OPPO/一加白名单）在 ColorOS 上同时获得：
 
 - 🎧 **LC3 音频**（LE Audio unicast，48kHz / 高可靠）
@@ -21,12 +24,17 @@
 | Root | **ReSukiSU 4.2.0-rc3**（KernelSU 分支，`ksud 4.2.0-rc3-81-gd5e9e025`，uapi 6） |
 | Xposed 框架 | **Vector 2.2**（libxposed API 102） |
 | 耳机 | **ROSE OpenFeel MK2**（主控：中科蓝讯 BT8952F） |
-| 耳机身份 | 经典 `84:1E:1A:0C:74:51`；LE 左 `…74:04` / 右 `…B1:7F` |
 
 > 原理是通用的，但 hook 点与系统属性是 ColorOS 特有的，其它机型需要自行适配。
 > 例外：`persist.bluetooth.enable_dual_mode_audio` 是 AOSP 属性，理论上原生 Android 也可用。
 
 ---
+
+## 界面
+
+| 状态面板 | 配置向导 | 写操作 |
+| --- | --- | --- |
+| ![状态](docs/images/status.jpg) | ![向导](docs/images/wizard.jpg) | ![操作](docs/images/actions.jpg) |
 
 ## 原理
 
