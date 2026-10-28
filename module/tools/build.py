@@ -5,7 +5,7 @@ import sys
 import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SDK = os.path.join(ROOT, "sdk")
+SDK = os.environ.get("LEA_SDK") or os.path.join(ROOT, "sdk")
 BT = os.path.join(SDK, "build-tools", "35.0.0")
 ANDROID_JAR = os.path.join(SDK, "platforms", "android-35", "android.jar")
 AAPT2 = os.path.join(BT, "aapt2.exe")
