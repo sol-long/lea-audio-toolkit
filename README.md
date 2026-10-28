@@ -7,8 +7,24 @@
 - 🔧 **厂商 App 可用**（经典链路在，Roselink 等 App 仍能连）
 - 🔁 **重启后自动恢复**（不用每次手动配对）
 
-> 本项目在一加 Ace 3V（ColorOS 16 / Android 16）+ ROSE OpenFeel MK2（中科蓝讯 BT8952F）上开发并验证。
+## 测试环境
+
+本项目在下列环境完整验证（含两次恢复出厂重配、重启后自动恢复）。
+
+| 项 | 值 |
+| --- | --- |
+| 手机型号 | 一加 Ace 3V（PJF110） |
+| 系统 | ColorOS **V16.0.0** |
+| 固件版本 | `PJF110_16.0.5.1001(CN01)` |
+| Android | **16** |
+| 内核 | `6.1.141-android14-11-o-gffc54a6d2287`（aarch64，SMP PREEMPT） |
+| Root | **ReSukiSU 4.2.0-rc3**（KernelSU 分支，`ksud 4.2.0-rc3-81-gd5e9e025`，uapi 6） |
+| Xposed 框架 | **Vector 2.2**（libxposed API 102） |
+| 耳机 | **ROSE OpenFeel MK2**（主控：中科蓝讯 BT8952F） |
+| 耳机身份 | 经典 `84:1E:1A:0C:74:51`；LE 左 `…74:04` / 右 `…B1:7F` |
+
 > 原理是通用的，但 hook 点与系统属性是 ColorOS 特有的，其它机型需要自行适配。
+> 例外：`persist.bluetooth.enable_dual_mode_audio` 是 AOSP 属性，理论上原生 Android 也可用。
 
 ---
 
