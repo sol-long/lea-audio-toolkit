@@ -1,6 +1,7 @@
 import io
 import os
 import re
+import shutil
 import sys
 import urllib.request
 import zipfile
@@ -64,7 +65,19 @@ def main():
             fetch(REPO + url, dest)
         print("have", name, os.path.getsize(dest), "bytes")
         with zipfile.ZipFile(dest) as z:
+            tops = {n.split("/")[0] for n in z.namelist() if "/" in n}
             z.extractall(SDK)
+        # Google 的包解压出来的顶层目录名不一定是 <ver>（build-tools 35 解压是 android-15），
+        # 统一挪到 build-tools/35.0.0 与 platforms/android-35 这种标准布局
+        target = os.path.join(SDK, kind, ver)
+        os.makedirs(os.path.dirname(target), exist_ok=True)
+        if not os.path.isdir(target):
+            for t in sorted(tops):
+                src = os.path.join(SDK, t)
+                if os.path.isdir(src):
+                    shutil.move(src, target)
+                    print("  moved", t, "->", os.path.relpath(target, SDK))
+                    break
         ok += 1
     print("done, extracted", ok, "packages into", SDK)
 
