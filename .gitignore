@@ -1,0 +1,32 @@
+# 构建产物
+build/
+dist/
+*.apk
+*.keystore
+*.jks
+
+# SDK（由 tools/get_sdk.py 下载）
+module/sdk/
+sdk/
+
+# 抓包与调试文件
+*.cfa
+*.btsnoop
+*.log
+dbg/
+analysis/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 编辑器
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# 系统
+.DS_Store
+Thumbs.db

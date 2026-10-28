@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LEA Enabler</string>
+    <string name="module_desc">为任意 LE Audio(LC3) 耳机解除厂商白名单限制：把 LE Audio UUID 补回蓝牙栈，并放行 isLeAudioAllowed。作用域仅 com.android.bluetooth。</string>
+</resources>

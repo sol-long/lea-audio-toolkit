@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LSPosed 会据此推荐作用域，省得用户去「显示系统应用」里翻 -->
+    <string-array name="xposed_scope">
+        <item>com.android.bluetooth</item>
+    </string-array>
+</resources>
