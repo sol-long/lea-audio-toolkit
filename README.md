@@ -140,6 +140,11 @@ python -X utf8 tools/build.py        # 复用 ../module/sdk，产出 dist/LEAToo
 
 ---
 
+## 开发说明
+
+本项目在 **DeepSeek V4.1-FLASH 1017** 辅助下完成——包括系统 hook 点定位、协议抓包分析、
+App 与向导页实现、文档整理与真机调试。
+
 ## 免责声明
 
 - 本项目通过 hook 系统蓝牙栈实现，**属于非常规用法**，可能导致蓝牙异常、耗电增加
